@@ -4,7 +4,7 @@ import { RouterProvider } from 'react-router-dom';
 import './App.css'
 
 export default function App({ router }) {
-    const [showSplashscreen, setShowSplashscreen] = useState(true);
+    const [showSplashScreen, setShowSplashScreen] = useState(true);
 
     useEffect(() => {
         /*
@@ -31,7 +31,7 @@ export default function App({ router }) {
                 */
                 if( navState == "idle" ){
                     // Hide the splash screen.
-                    setShowSplashscreen(false);
+                    setShowSplashScreen(false);
                     clearInterval( splashScreenInterval )
                 }
             }, 1000);
@@ -43,7 +43,7 @@ export default function App({ router }) {
     return (
         <>
             {
-                showSplashscreen ? <SplashScreen /> : <RouterProvider router={router} />
+                showSplashScreen ? <SplashScreen /> : <RouterProvider router={router} />
             }
         </>
     );
